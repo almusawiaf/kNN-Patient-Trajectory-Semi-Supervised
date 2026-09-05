@@ -1,0 +1,100 @@
+# ============================================================================
+# Diagnostic Trajectory Generation and Prediction
+# Semi-supervised kNN imputation over patient diagnosis trajectories
+# ============================================================================
+# Paths follow the original repo layout on the cluster. Override any of these
+# on the command line, e.g.  --mimic_dir /some/other/place
+# ============================================================================
+
+paths:
+  # Raw MIMIC-III CSVs (ADMISSIONS.csv, DIAGNOSES_ICD.csv, ...)
+  mimic_dir: /lustre/home/almusawiaf/PhD_Projects/MIMIC_resources
+
+  # Project root. All generated artefacts live under here.
+  project_root: /lustre/home/almusawiaf/PhD_Projects/Satyaki/Semi_Supervised
+
+  # Sub-directories, resolved relative to project_root unless absolute.
+  data_dir: data
+  logs_dir: logs
+  results_dir: results
+
+data:
+  # ICD-9 truncation. 3 = category (D_250), 4 = subcategory (D_2500),
+  # 5 = full billable code, 0 = no truncation at all.
+  # This is the knob Liam was asked to sweep.
+  icd_digits: 3
+
+  # Drop admissions with fewer than this many distinct diagnoses.
+  min_codes_per_admission: 2
+
+  # Drop codes appearing in fewer than this many admissions.
+  min_code_frequency: 5
+
+  # For the trajectory task: keep only patients with at least this many visits.
+  min_visits_per_patient: 2
+
+task:
+  # within_visit : mask one code inside an admission, predict it
+  #                (the original formulation, fixed evaluation)
+  # next_visit   : hold out a patient's final visit, predict its code set
+  #                (the actual trajectory-prediction task)
+  name: within_visit
+
+  # Fraction of admissions/patients held out for evaluation.
+  test_fraction: 0.2
+
+  seed: 42
+
+model:
+  # Similarity used for neighbour search.
+  # Set-based    : jaccard, dice, overlap, cosine
+  # Vector-based : euclidean, manhattan, hamming, mahalanobis
+  # Sequence     : dtw_jaccard  (patient-level, next_visit task only)
+  similarity: jaccard
+
+  # Number of neighbours.
+  k: 25
+
+  # Weighting of neighbour votes: uniform | similarity | rank
+  vote_weighting: similarity
+
+  # Smoothing added to distances before inverting (the epsilon in the paper).
+  epsilon: 1.0e-6
+
+  # Dimensionality for the whitened projection used by `mahalanobis`.
+  mahalanobis_components: 128
+
+  # Sakoe-Chiba band for DTW (null = no constraint).
+  # Recommended: set to max(5, abs(len_a - len_b)) for within_visit.
+  dtw_window: null
+
+hierarchical:
+  # Enable the tiered update: existing sequences that appear in the kNN of
+  # many new sequences get their own neighbours recomputed.
+  enabled: true
+
+  # F(S_i) cutoff.
+  recompute_threshold: 2
+
+  # Size of each simulated arrival batch.
+  batch_size: 500
+
+evaluation:
+  # Report hits@k for each of these cut-offs.
+  k_values: [1, 5, 10, 20]
+
+  # Also report metrics broken down by how common the held-out code is.
+  stratify_by_frequency: true
+
+  # Baselines to run alongside the model.
+  baselines: [frequency_prior, cooccurrence]
+
+runtime:
+  # Rows processed per similarity block. Lower this if memory is tight.
+  block_size: 512
+
+  # Cap on reference-set size for O(n^2) metrics like DTW. null = no cap.
+  max_reference: 20000
+
+  n_jobs: 8
+  log_level: INFO

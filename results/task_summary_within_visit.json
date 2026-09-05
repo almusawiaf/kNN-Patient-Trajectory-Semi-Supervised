@@ -1,0 +1,7 @@
+{
+  "task": "within_visit",
+  "n_reference": 46831,
+  "n_queries": 11707,
+  "mean_observed_codes": 9.263688391560605,
+  "median_observed_codes": 8.0
+}

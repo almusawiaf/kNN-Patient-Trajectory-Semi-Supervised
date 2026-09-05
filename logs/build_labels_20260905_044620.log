@@ -1,0 +1,4 @@
+2026-09-05 04:46:20,440 | INFO    | build_labels       | Logging to /lustre/home/almusawiaf/PhD_Projects/Satyaki/Semi_Supervised/logs/build_labels_20260905_044620.log
+2026-09-05 04:46:20,633 | INFO    | build_labels       | within_visit: 46831 reference admissions, 11707 masked queries
+2026-09-05 04:46:20,806 | INFO    | io                 | Wrote /lustre/home/almusawiaf/PhD_Projects/Satyaki/Semi_Supervised/data/task_within_visit.pkl
+2026-09-05 04:46:20,973 | INFO    | io                 | Wrote /lustre/home/almusawiaf/PhD_Projects/Satyaki/Semi_Supervised/results/task_summary_within_visit.json

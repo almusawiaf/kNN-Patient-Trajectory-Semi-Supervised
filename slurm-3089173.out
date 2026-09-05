@@ -1,0 +1,73 @@
+Reorganizing project layout in: /lustre/home/almusawiaf/PhD_Projects/Satyaki/Semi_Supervised
+
+models/ (library code, imported as 'from models.x import y')
+  __init__.py -> models/
+  config.py -> models/
+  io_utils.py -> models/
+  representations.py -> models/
+  similarity.py -> models/
+  dtw.py -> models/
+  imputation.py -> models/
+  baselines.py -> models/
+  hierarchical.py -> models/
+  evaluation.py -> models/
+
+scripts/ (SLURM + shell wrappers)
+  00_prepare_data.sh -> scripts/
+  01_build_labels.sh -> scripts/
+  02_run_single.sh -> scripts/
+  03_sweep_similarity.sh -> scripts/
+  04_sweep_granularity.sh -> scripts/
+
+scratch/ (tests, fixtures, ad-hoc analysis)
+  test_similarity.py -> scratch/
+  test_pipeline_synthetic.py -> scratch/
+  make_fake_mimic.py -> scratch/
+  collect_results.py -> scratch/
+
+Staying at root (pipeline entry points + config):
+  prepare_data.py
+  build_labels.py
+  run_experiment.py
+  config.yaml
+  README.md
+  requirements.txt
+
+Verifying imports resolve...
+  models package OK, version 0.1.0
+
+Done. Final layout:
+  build_labels.py
+  config.yaml
+  data
+  logs
+  models
+  models/baselines.py
+  models/config.py
+  models/dtw.py
+  models/evaluation.py
+  models/hierarchical.py
+  models/imputation.py
+  models/__init__.py
+  models/io_utils.py
+  models/__pycache__
+  models/representations.py
+  models/similarity.py
+  prepare_data.py
+  README.md
+  reorganize.sh
+  requirements.txt
+  results
+  run_experiment.py
+  scratch
+  scratch/collect_results.py
+  scratch/make_fake_mimic.py
+  scratch/test_pipeline_synthetic.py
+  scratch/test_similarity.py
+  scripts
+  scripts/00_prepare_data.sh
+  scripts/01_build_labels.sh
+  scripts/02_run_single.sh
+  scripts/03_sweep_similarity.sh
+  scripts/04_sweep_granularity.sh
+  slurm-3089173.out

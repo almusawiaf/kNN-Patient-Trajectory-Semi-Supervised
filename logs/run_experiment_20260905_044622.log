@@ -1,0 +1,40 @@
+2026-09-05 04:46:22,051 | INFO    | run_experiment     | Logging to /lustre/home/almusawiaf/PhD_Projects/Satyaki/Semi_Supervised/logs/run_experiment_20260905_044622.log
+2026-09-05 04:46:22,167 | INFO    | run_experiment     | Task=within_visit | similarity=jaccard | queries=11707 | vocab=888
+2026-09-05 04:46:22,340 | INFO    | models.representations | Built 46831 x 888 matrix, density 0.01152
+2026-09-05 04:46:22,375 | INFO    | models.representations | Built 11707 x 888 matrix, density 0.01043
+2026-09-05 04:46:39,186 | INFO    | run_experiment     | Retrieved 25 neighbours for 11707 queries in 16.8s
+2026-09-05 04:46:40,355 | INFO    | models.representations | Built 46831 x 888 matrix, density 0.01152
+2026-09-05 04:46:40,356 | INFO    | models.baselines   | Building baseline: frequency_prior
+2026-09-05 04:46:40,392 | INFO    | models.baselines   | Building baseline: cooccurrence
+2026-09-05 04:46:40,597 | INFO    | models.baselines   | Co-occurrence PPMI matrix: (888, 888)
+2026-09-05 04:46:43,181 | INFO    | run_experiment     | 
+model                       hits@1      hits@5     hits@10     hits@20         mrr
+----------------------------------------------------------------------------------
+knn_jaccard                 0.1941      0.3859      0.4790      0.5685      0.2871
+frequency_prior             0.0563      0.1913      0.2761      0.4091      0.1273
+cooccurrence                0.0011      0.0269      0.0605      0.0885      0.0164
+2026-09-05 04:46:46,935 | INFO    | models.hierarchical | Batch of 500: recomputed 2026 hub neighbourhoods (4.33% of reference)
+2026-09-05 04:46:52,656 | INFO    | models.hierarchical | Batch of 500: recomputed 3444 hub neighbourhoods (7.35% of reference)
+2026-09-05 04:46:58,131 | INFO    | models.hierarchical | Batch of 500: recomputed 3384 hub neighbourhoods (7.23% of reference)
+2026-09-05 04:47:03,146 | INFO    | models.hierarchical | Batch of 500: recomputed 3083 hub neighbourhoods (6.58% of reference)
+2026-09-05 04:47:07,800 | INFO    | models.hierarchical | Batch of 500: recomputed 2746 hub neighbourhoods (5.86% of reference)
+2026-09-05 04:47:12,026 | INFO    | models.hierarchical | Batch of 500: recomputed 2410 hub neighbourhoods (5.15% of reference)
+2026-09-05 04:47:15,752 | INFO    | models.hierarchical | Batch of 500: recomputed 2126 hub neighbourhoods (4.54% of reference)
+2026-09-05 04:47:19,118 | INFO    | models.hierarchical | Batch of 500: recomputed 1881 hub neighbourhoods (4.02% of reference)
+2026-09-05 04:47:22,284 | INFO    | models.hierarchical | Batch of 500: recomputed 1735 hub neighbourhoods (3.70% of reference)
+2026-09-05 04:47:25,113 | INFO    | models.hierarchical | Batch of 500: recomputed 1540 hub neighbourhoods (3.29% of reference)
+2026-09-05 04:47:27,704 | INFO    | models.hierarchical | Batch of 500: recomputed 1367 hub neighbourhoods (2.92% of reference)
+2026-09-05 04:47:30,218 | INFO    | models.hierarchical | Batch of 500: recomputed 1282 hub neighbourhoods (2.74% of reference)
+2026-09-05 04:47:32,523 | INFO    | models.hierarchical | Batch of 500: recomputed 1131 hub neighbourhoods (2.42% of reference)
+2026-09-05 04:47:34,629 | INFO    | models.hierarchical | Batch of 500: recomputed 997 hub neighbourhoods (2.13% of reference)
+2026-09-05 04:47:36,733 | INFO    | models.hierarchical | Batch of 500: recomputed 980 hub neighbourhoods (2.09% of reference)
+2026-09-05 04:47:38,684 | INFO    | models.hierarchical | Batch of 500: recomputed 829 hub neighbourhoods (1.77% of reference)
+2026-09-05 04:47:40,443 | INFO    | models.hierarchical | Batch of 500: recomputed 737 hub neighbourhoods (1.57% of reference)
+2026-09-05 04:47:42,106 | INFO    | models.hierarchical | Batch of 500: recomputed 675 hub neighbourhoods (1.44% of reference)
+2026-09-05 04:47:43,747 | INFO    | models.hierarchical | Batch of 500: recomputed 654 hub neighbourhoods (1.40% of reference)
+2026-09-05 04:47:45,316 | INFO    | models.hierarchical | Batch of 500: recomputed 611 hub neighbourhoods (1.30% of reference)
+2026-09-05 04:47:46,814 | INFO    | models.hierarchical | Batch of 500: recomputed 562 hub neighbourhoods (1.20% of reference)
+2026-09-05 04:47:48,208 | INFO    | models.hierarchical | Batch of 500: recomputed 494 hub neighbourhoods (1.05% of reference)
+2026-09-05 04:47:49,641 | INFO    | models.hierarchical | Batch of 500: recomputed 503 hub neighbourhoods (1.07% of reference)
+2026-09-05 04:47:50,226 | INFO    | models.hierarchical | Batch of 207: recomputed 213 hub neighbourhoods (0.45% of reference)
+2026-09-05 04:47:50,260 | INFO    | io                 | Wrote /lustre/home/almusawiaf/PhD_Projects/Satyaki/Semi_Supervised/results/within_visit_icd3_jaccard_k25.json

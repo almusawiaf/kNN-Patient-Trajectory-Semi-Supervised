@@ -1,0 +1,66 @@
+============================================================
+  Job         : 3094240
+  Task        : within_visit
+  Similarity  : jaccard
+  K           : 25
+  ICD digits  : 3
+  Vote weight : similarity
+  DTW window  : none
+  Result tag  : within_visit_icd3_jaccard_k25
+  Started     : Fri Sep  4 09:02:06 AM EDT 2026
+============================================================
+→ python run_experiment.py     --task         within_visit     --similarity   jaccard     --k            25     --icd_digits   3     --vote_weighting similarity     --tag          within_visit_icd3_jaccard_k25
+------------------------------------------------------------
+2026-09-04 09:02:07,131 | INFO    | run_experiment     | Logging to /lustre/home/almusawiaf/PhD_Projects/Satyaki/Semi_Supervised/logs/run_experiment_20260904_090207.log
+2026-09-04 09:02:07,223 | INFO    | run_experiment     | Task=within_visit | similarity=jaccard | queries=11707 | vocab=2583
+2026-09-04 09:02:07,284 | INFO    | models.representations | Built 46831 x 2583 matrix, density 0.00036
+2026-09-04 09:02:07,300 | INFO    | models.representations | Built 11707 x 2583 matrix, density 0.00032
+2026-09-04 09:02:13,321 | INFO    | run_experiment     | Retrieved 25 neighbours for 11707 queries in 6.0s
+2026-09-04 09:02:14,792 | INFO    | models.representations | Built 46831 x 2583 matrix, density 0.00036
+2026-09-04 09:02:14,793 | INFO    | models.baselines   | Building baseline: frequency_prior
+2026-09-04 09:02:14,794 | INFO    | models.baselines   | Building baseline: cooccurrence
+2026-09-04 09:02:14,913 | INFO    | models.baselines   | Co-occurrence PPMI matrix: (2583, 2583)
+2026-09-04 09:02:16,357 | INFO    | run_experiment     | 
+model                       hits@1      hits@5     hits@10     hits@20         mrr
+----------------------------------------------------------------------------------
+knn_jaccard                 0.0819      0.2150      0.3035      0.4171      0.1523
+frequency_prior             0.0000      0.0000      0.0000      0.0000      0.0012
+cooccurrence                0.0000      0.0000      0.0000      0.0000      0.0000
+2026-09-04 09:02:17,077 | INFO    | models.hierarchical | Batch of 500: recomputed 922 hub neighbourhoods (1.97% of reference)
+2026-09-04 09:02:17,746 | INFO    | models.hierarchical | Batch of 500: recomputed 817 hub neighbourhoods (1.74% of reference)
+2026-09-04 09:02:18,384 | INFO    | models.hierarchical | Batch of 500: recomputed 754 hub neighbourhoods (1.61% of reference)
+2026-09-04 09:02:19,090 | INFO    | models.hierarchical | Batch of 500: recomputed 835 hub neighbourhoods (1.78% of reference)
+2026-09-04 09:02:19,705 | INFO    | models.hierarchical | Batch of 500: recomputed 699 hub neighbourhoods (1.49% of reference)
+2026-09-04 09:02:20,313 | INFO    | models.hierarchical | Batch of 500: recomputed 678 hub neighbourhoods (1.45% of reference)
+2026-09-04 09:02:20,901 | INFO    | models.hierarchical | Batch of 500: recomputed 624 hub neighbourhoods (1.33% of reference)
+2026-09-04 09:02:21,473 | INFO    | models.hierarchical | Batch of 500: recomputed 610 hub neighbourhoods (1.30% of reference)
+2026-09-04 09:02:22,010 | INFO    | models.hierarchical | Batch of 500: recomputed 489 hub neighbourhoods (1.04% of reference)
+2026-09-04 09:02:22,480 | INFO    | models.hierarchical | Batch of 500: recomputed 394 hub neighbourhoods (0.84% of reference)
+2026-09-04 09:02:22,983 | INFO    | models.hierarchical | Batch of 500: recomputed 468 hub neighbourhoods (1.00% of reference)
+2026-09-04 09:02:23,495 | INFO    | models.hierarchical | Batch of 500: recomputed 495 hub neighbourhoods (1.06% of reference)
+2026-09-04 09:02:23,956 | INFO    | models.hierarchical | Batch of 500: recomputed 372 hub neighbourhoods (0.79% of reference)
+2026-09-04 09:02:24,434 | INFO    | models.hierarchical | Batch of 500: recomputed 362 hub neighbourhoods (0.77% of reference)
+2026-09-04 09:02:24,948 | INFO    | models.hierarchical | Batch of 500: recomputed 463 hub neighbourhoods (0.99% of reference)
+2026-09-04 09:02:25,426 | INFO    | models.hierarchical | Batch of 500: recomputed 415 hub neighbourhoods (0.89% of reference)
+2026-09-04 09:02:25,864 | INFO    | models.hierarchical | Batch of 500: recomputed 315 hub neighbourhoods (0.67% of reference)
+2026-09-04 09:02:26,260 | INFO    | models.hierarchical | Batch of 500: recomputed 253 hub neighbourhoods (0.54% of reference)
+2026-09-04 09:02:26,656 | INFO    | models.hierarchical | Batch of 500: recomputed 235 hub neighbourhoods (0.50% of reference)
+2026-09-04 09:02:27,028 | INFO    | models.hierarchical | Batch of 500: recomputed 193 hub neighbourhoods (0.41% of reference)
+2026-09-04 09:02:27,441 | INFO    | models.hierarchical | Batch of 500: recomputed 258 hub neighbourhoods (0.55% of reference)
+2026-09-04 09:02:27,835 | INFO    | models.hierarchical | Batch of 500: recomputed 249 hub neighbourhoods (0.53% of reference)
+2026-09-04 09:02:28,219 | INFO    | models.hierarchical | Batch of 500: recomputed 235 hub neighbourhoods (0.50% of reference)
+2026-09-04 09:02:28,352 | INFO    | models.hierarchical | Batch of 207: recomputed 56 hub neighbourhoods (0.12% of reference)
+2026-09-04 09:02:28,356 | INFO    | io                 | Wrote /lustre/home/almusawiaf/PhD_Projects/Satyaki/Semi_Supervised/results/within_visit_icd3_jaccard_k25.json
+------------------------------------------------------------
+Results summary:
+  model                         hits@1    hits@5   hits@10   hits@20       mrr
+  ----------------------------------------------------------------------------
+  knn_jaccard                   0.0819    0.2150    0.3035    0.4171    0.1523
+  frequency_prior               0.0000    0.0000    0.0000    0.0000    0.0012
+  cooccurrence                  0.0000    0.0000    0.0000    0.0000    0.0000
+
+  Hierarchical update: 11191 recomputations across 24 batches (76.1% work saved vs full rebuild)
+============================================================
+  Finished    : Fri Sep  4 09:02:28 AM EDT 2026
+  Result      : results/within_visit_icd3_jaccard_k25.json
+============================================================

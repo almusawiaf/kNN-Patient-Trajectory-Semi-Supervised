@@ -1,0 +1,119 @@
+2026-09-04 09:02:06,761 | INFO    | run_experiment     | Logging to /lustre/home/almusawiaf/PhD_Projects/Satyaki/Semi_Supervised/logs/run_experiment_20260904_090206.log
+2026-09-04 09:02:06,761 | INFO    | run_experiment     | Logging to /lustre/home/almusawiaf/PhD_Projects/Satyaki/Semi_Supervised/logs/run_experiment_20260904_090206.log
+2026-09-04 09:02:06,763 | INFO    | run_experiment     | Logging to /lustre/home/almusawiaf/PhD_Projects/Satyaki/Semi_Supervised/logs/run_experiment_20260904_090206.log
+2026-09-04 09:02:06,848 | INFO    | run_experiment     | Task=within_visit | similarity=dtw_tag | queries=11707 | vocab=2583
+2026-09-04 09:02:06,848 | WARNING | run_experiment     | Capping DTW reference from 46831 to 20000
+2026-09-04 09:02:06,851 | INFO    | run_experiment     | Task=within_visit | similarity=dtw_tag | queries=11707 | vocab=2583
+2026-09-04 09:02:06,851 | WARNING | run_experiment     | Capping DTW reference from 46831 to 20000
+2026-09-04 09:02:06,852 | INFO    | run_experiment     | Task=within_visit | similarity=dtw_tag | queries=11707 | vocab=2583
+2026-09-04 09:02:06,852 | WARNING | run_experiment     | Capping DTW reference from 46831 to 20000
+2026-09-04 09:15:22,420 | INFO    | run_experiment     | DTW tag: 500/11707 queries (795.6s)
+2026-09-04 09:17:44,173 | INFO    | run_experiment     | DTW tag: 500/11707 queries (937.3s)
+2026-09-04 09:17:46,392 | INFO    | run_experiment     | DTW tag: 500/11707 queries (939.5s)
+2026-09-04 09:27:48,670 | INFO    | run_experiment     | DTW tag: 1000/11707 queries (1541.8s)
+2026-09-04 09:32:08,744 | INFO    | run_experiment     | DTW tag: 1000/11707 queries (1801.9s)
+2026-09-04 09:32:15,815 | INFO    | run_experiment     | DTW tag: 1000/11707 queries (1809.0s)
+2026-09-04 09:40:38,892 | INFO    | run_experiment     | DTW tag: 1500/11707 queries (2312.0s)
+2026-09-04 09:47:02,787 | INFO    | run_experiment     | DTW tag: 1500/11707 queries (2695.9s)
+2026-09-04 09:47:17,982 | INFO    | run_experiment     | DTW tag: 1500/11707 queries (2711.1s)
+2026-09-04 09:53:02,150 | INFO    | run_experiment     | DTW tag: 2000/11707 queries (3055.3s)
+2026-09-04 10:01:26,529 | INFO    | run_experiment     | DTW tag: 2000/11707 queries (3559.7s)
+2026-09-04 10:01:45,237 | INFO    | run_experiment     | DTW tag: 2000/11707 queries (3578.4s)
+2026-09-04 10:05:55,371 | INFO    | run_experiment     | DTW tag: 2500/11707 queries (3828.5s)
+2026-09-04 10:16:15,073 | INFO    | run_experiment     | DTW tag: 2500/11707 queries (4448.2s)
+2026-09-04 10:16:44,636 | INFO    | run_experiment     | DTW tag: 2500/11707 queries (4477.8s)
+2026-09-04 10:18:43,905 | INFO    | run_experiment     | DTW tag: 3000/11707 queries (4597.1s)
+2026-09-04 10:31:12,428 | INFO    | run_experiment     | DTW tag: 3000/11707 queries (5345.6s)
+2026-09-04 10:31:31,103 | INFO    | run_experiment     | DTW tag: 3500/11707 queries (5364.3s)
+2026-09-04 10:31:49,735 | INFO    | run_experiment     | DTW tag: 3000/11707 queries (5382.9s)
+2026-09-04 10:43:57,026 | INFO    | run_experiment     | DTW tag: 4000/11707 queries (6110.2s)
+2026-09-04 10:46:00,552 | INFO    | run_experiment     | DTW tag: 3500/11707 queries (6233.7s)
+2026-09-04 10:46:47,894 | INFO    | run_experiment     | DTW tag: 3500/11707 queries (6281.0s)
+2026-09-04 10:56:25,741 | INFO    | run_experiment     | DTW tag: 4500/11707 queries (6858.9s)
+2026-09-04 11:00:28,120 | INFO    | run_experiment     | DTW tag: 4000/11707 queries (7101.3s)
+2026-09-04 11:01:21,951 | INFO    | run_experiment     | DTW tag: 4000/11707 queries (7155.1s)
+2026-09-04 11:09:04,404 | INFO    | run_experiment     | DTW tag: 5000/11707 queries (7617.6s)
+2026-09-04 11:15:03,254 | INFO    | run_experiment     | DTW tag: 4500/11707 queries (7976.4s)
+2026-09-04 11:16:10,835 | INFO    | run_experiment     | DTW tag: 4500/11707 queries (8044.0s)
+2026-09-04 11:21:19,367 | INFO    | run_experiment     | DTW tag: 5500/11707 queries (8352.5s)
+2026-09-04 11:29:48,425 | INFO    | run_experiment     | DTW tag: 5000/11707 queries (8861.6s)
+2026-09-04 11:31:03,084 | INFO    | run_experiment     | DTW tag: 5000/11707 queries (8936.2s)
+2026-09-04 11:33:56,780 | INFO    | run_experiment     | DTW tag: 6000/11707 queries (9109.9s)
+2026-09-04 11:44:01,824 | INFO    | run_experiment     | DTW tag: 5500/11707 queries (9715.0s)
+2026-09-04 11:45:26,347 | INFO    | run_experiment     | DTW tag: 5500/11707 queries (9799.5s)
+2026-09-04 11:46:43,433 | INFO    | run_experiment     | DTW tag: 6500/11707 queries (9876.6s)
+2026-09-04 11:59:01,417 | INFO    | run_experiment     | DTW tag: 6000/11707 queries (10614.6s)
+2026-09-04 11:59:27,817 | INFO    | run_experiment     | DTW tag: 7000/11707 queries (10641.0s)
+2026-09-04 12:00:35,962 | INFO    | run_experiment     | DTW tag: 6000/11707 queries (10709.1s)
+2026-09-04 12:12:24,528 | INFO    | run_experiment     | DTW tag: 7500/11707 queries (11417.7s)
+2026-09-04 12:14:04,593 | INFO    | run_experiment     | DTW tag: 6500/11707 queries (11517.7s)
+2026-09-04 12:15:50,446 | INFO    | run_experiment     | DTW tag: 6500/11707 queries (11623.6s)
+2026-09-04 12:25:34,967 | INFO    | run_experiment     | DTW tag: 8000/11707 queries (12208.0s)
+2026-09-04 12:28:54,037 | INFO    | run_experiment     | DTW tag: 7000/11707 queries (12407.2s)
+2026-09-04 12:30:45,192 | INFO    | run_experiment     | DTW tag: 7000/11707 queries (12518.3s)
+2026-09-04 12:38:11,987 | INFO    | run_experiment     | DTW tag: 8500/11707 queries (12965.1s)
+2026-09-04 12:43:55,236 | INFO    | run_experiment     | DTW tag: 7500/11707 queries (13308.4s)
+2026-09-04 12:45:50,654 | INFO    | run_experiment     | DTW tag: 7500/11707 queries (13423.8s)
+2026-09-04 12:50:49,799 | INFO    | run_experiment     | DTW tag: 9000/11707 queries (13723.0s)
+2026-09-04 12:59:14,380 | INFO    | run_experiment     | DTW tag: 8000/11707 queries (14227.5s)
+2026-09-04 13:01:16,844 | INFO    | run_experiment     | DTW tag: 8000/11707 queries (14350.0s)
+2026-09-04 13:03:13,333 | INFO    | run_experiment     | DTW tag: 9500/11707 queries (14466.5s)
+2026-09-04 13:13:45,814 | INFO    | run_experiment     | DTW tag: 8500/11707 queries (15099.0s)
+2026-09-04 13:15:47,049 | INFO    | run_experiment     | DTW tag: 10000/11707 queries (15220.2s)
+2026-09-04 13:16:02,419 | INFO    | run_experiment     | DTW tag: 8500/11707 queries (15235.6s)
+2026-09-04 13:28:30,081 | INFO    | run_experiment     | DTW tag: 9000/11707 queries (15983.2s)
+2026-09-04 13:28:34,167 | INFO    | run_experiment     | DTW tag: 10500/11707 queries (15987.3s)
+2026-09-04 13:31:00,905 | INFO    | run_experiment     | DTW tag: 9000/11707 queries (16134.1s)
+2026-09-04 13:41:18,724 | INFO    | run_experiment     | DTW tag: 11000/11707 queries (16751.9s)
+2026-09-04 13:42:56,964 | INFO    | run_experiment     | DTW tag: 9500/11707 queries (16850.1s)
+2026-09-04 13:45:36,178 | INFO    | run_experiment     | DTW tag: 9500/11707 queries (17009.3s)
+2026-09-04 13:54:24,380 | INFO    | run_experiment     | DTW tag: 11500/11707 queries (17537.5s)
+2026-09-04 13:57:35,023 | INFO    | run_experiment     | DTW tag: 10000/11707 queries (17728.2s)
+2026-09-04 13:59:41,272 | INFO    | run_experiment     | DTW tag retrieval done: 11707 queries in 17854.4s
+2026-09-04 13:59:41,925 | INFO    | models.representations | Built 46831 x 2583 matrix, density 0.00036
+2026-09-04 13:59:41,945 | INFO    | models.baselines   | Building baseline: frequency_prior
+2026-09-04 13:59:42,059 | INFO    | models.baselines   | Building baseline: cooccurrence
+2026-09-04 13:59:43,052 | INFO    | models.baselines   | Co-occurrence PPMI matrix: (2583, 2583)
+2026-09-04 13:59:46,600 | INFO    | run_experiment     | 
+model                       hits@1      hits@5     hits@10     hits@20         mrr
+----------------------------------------------------------------------------------
+knn_dtw_tag                 0.1723      0.3515      0.4426      0.5356      0.2594
+frequency_prior             0.0000      0.0000      0.0000      0.0000      0.0012
+cooccurrence                0.0000      0.0000      0.0000      0.0000      0.0000
+2026-09-04 14:00:23,390 | INFO    | run_experiment     | DTW tag: 10000/11707 queries (17896.5s)
+2026-09-04 14:12:24,597 | INFO    | run_experiment     | DTW tag: 10500/11707 queries (18617.7s)
+2026-09-04 14:15:19,515 | INFO    | run_experiment     | DTW tag: 10500/11707 queries (18792.7s)
+2026-09-04 14:27:11,335 | INFO    | run_experiment     | DTW tag: 11000/11707 queries (19504.5s)
+2026-09-04 14:30:18,464 | INFO    | run_experiment     | DTW tag: 11000/11707 queries (19691.6s)
+2026-09-04 14:42:19,229 | INFO    | run_experiment     | DTW tag: 11500/11707 queries (20412.4s)
+2026-09-04 14:45:39,836 | INFO    | run_experiment     | DTW tag: 11500/11707 queries (20613.0s)
+2026-09-04 14:48:27,597 | INFO    | run_experiment     | DTW tag retrieval done: 11707 queries in 20780.7s
+2026-09-04 14:48:27,660 | INFO    | models.representations | Built 46831 x 2583 matrix, density 0.00036
+2026-09-04 14:48:27,660 | INFO    | models.baselines   | Building baseline: frequency_prior
+2026-09-04 14:48:27,661 | INFO    | models.baselines   | Building baseline: cooccurrence
+2026-09-04 14:48:27,785 | INFO    | models.baselines   | Co-occurrence PPMI matrix: (2583, 2583)
+2026-09-04 14:48:29,154 | INFO    | run_experiment     | 
+model                       hits@1      hits@5     hits@10     hits@20         mrr
+----------------------------------------------------------------------------------
+knn_dtw_tag                 0.1715      0.3502      0.4423      0.5369      0.2587
+frequency_prior             0.0000      0.0000      0.0000      0.0000      0.0012
+cooccurrence                0.0000      0.0000      0.0000      0.0000      0.0000
+2026-09-04 14:51:54,654 | INFO    | run_experiment     | DTW tag retrieval done: 11707 queries in 20987.8s
+2026-09-04 14:51:54,716 | INFO    | models.representations | Built 46831 x 2583 matrix, density 0.00036
+2026-09-04 14:51:54,717 | INFO    | models.baselines   | Building baseline: frequency_prior
+2026-09-04 14:51:54,717 | INFO    | models.baselines   | Building baseline: cooccurrence
+2026-09-04 14:51:54,843 | INFO    | models.baselines   | Co-occurrence PPMI matrix: (2583, 2583)
+2026-09-04 14:51:56,213 | INFO    | run_experiment     | 
+model                       hits@1      hits@5     hits@10     hits@20         mrr
+----------------------------------------------------------------------------------
+knn_dtw_tag                 0.1715      0.3502      0.4423      0.5369      0.2587
+frequency_prior             0.0000      0.0000      0.0000      0.0000      0.0012
+cooccurrence                0.0000      0.0000      0.0000      0.0000      0.0000
+2026-09-04 16:17:54,486 | INFO    | models.hierarchical | Batch of 500: recomputed 1875 hub neighbourhoods (4.00% of reference)
+2026-09-04 17:29:04,167 | INFO    | models.hierarchical | Batch of 500: recomputed 1881 hub neighbourhoods (4.02% of reference)
+2026-09-04 17:35:41,527 | INFO    | models.hierarchical | Batch of 500: recomputed 1881 hub neighbourhoods (4.02% of reference)
+2026-09-04 20:01:43,368 | INFO    | models.hierarchical | Batch of 500: recomputed 3458 hub neighbourhoods (7.38% of reference)
+2026-09-04 21:46:37,123 | INFO    | models.hierarchical | Batch of 500: recomputed 3448 hub neighbourhoods (7.36% of reference)
+2026-09-04 21:55:28,457 | INFO    | models.hierarchical | Batch of 500: recomputed 3448 hub neighbourhoods (7.36% of reference)
+2026-09-05 02:42:31,743 | INFO    | models.hierarchical | Batch of 500: recomputed 3756 hub neighbourhoods (8.02% of reference)
+2026-09-05 02:57:45,813 | INFO    | models.hierarchical | Batch of 500: recomputed 3756 hub neighbourhoods (8.02% of reference)

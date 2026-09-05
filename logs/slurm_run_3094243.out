@@ -1,0 +1,53 @@
+============================================================
+  Job         : 3094243
+  Task        : within_visit
+  Similarity  : dtw_tag
+  K           : 25
+  ICD digits  : 3
+  Vote weight : similarity
+  DTW window  : 5
+  Result tag  : within_visit_icd3_dtw_tag_k25_w5
+  Started     : Fri Sep  4 09:02:05 AM EDT 2026
+============================================================
+NOTE: DTW similarity is O(n*m*L^2) — allow 4-24 h depending on cohort size.
+→ python run_experiment.py     --task         within_visit     --similarity   dtw_tag     --k            25     --icd_digits   3     --vote_weighting similarity     --tag          within_visit_icd3_dtw_tag_k25_w5 --dtw_window 5
+------------------------------------------------------------
+2026-09-04 09:02:06,761 | INFO    | run_experiment     | Logging to /lustre/home/almusawiaf/PhD_Projects/Satyaki/Semi_Supervised/logs/run_experiment_20260904_090206.log
+2026-09-04 09:02:06,848 | INFO    | run_experiment     | Task=within_visit | similarity=dtw_tag | queries=11707 | vocab=2583
+2026-09-04 09:02:06,848 | WARNING | run_experiment     | Capping DTW reference from 46831 to 20000
+2026-09-04 09:15:22,420 | INFO    | run_experiment     | DTW tag: 500/11707 queries (795.6s)
+2026-09-04 09:27:48,670 | INFO    | run_experiment     | DTW tag: 1000/11707 queries (1541.8s)
+2026-09-04 09:40:38,892 | INFO    | run_experiment     | DTW tag: 1500/11707 queries (2312.0s)
+2026-09-04 09:53:02,150 | INFO    | run_experiment     | DTW tag: 2000/11707 queries (3055.3s)
+2026-09-04 10:05:55,371 | INFO    | run_experiment     | DTW tag: 2500/11707 queries (3828.5s)
+2026-09-04 10:18:43,905 | INFO    | run_experiment     | DTW tag: 3000/11707 queries (4597.1s)
+2026-09-04 10:31:31,103 | INFO    | run_experiment     | DTW tag: 3500/11707 queries (5364.3s)
+2026-09-04 10:43:57,026 | INFO    | run_experiment     | DTW tag: 4000/11707 queries (6110.2s)
+2026-09-04 10:56:25,741 | INFO    | run_experiment     | DTW tag: 4500/11707 queries (6858.9s)
+2026-09-04 11:09:04,404 | INFO    | run_experiment     | DTW tag: 5000/11707 queries (7617.6s)
+2026-09-04 11:21:19,367 | INFO    | run_experiment     | DTW tag: 5500/11707 queries (8352.5s)
+2026-09-04 11:33:56,780 | INFO    | run_experiment     | DTW tag: 6000/11707 queries (9109.9s)
+2026-09-04 11:46:43,433 | INFO    | run_experiment     | DTW tag: 6500/11707 queries (9876.6s)
+2026-09-04 11:59:27,817 | INFO    | run_experiment     | DTW tag: 7000/11707 queries (10641.0s)
+2026-09-04 12:12:24,528 | INFO    | run_experiment     | DTW tag: 7500/11707 queries (11417.7s)
+2026-09-04 12:25:34,967 | INFO    | run_experiment     | DTW tag: 8000/11707 queries (12208.0s)
+2026-09-04 12:38:11,987 | INFO    | run_experiment     | DTW tag: 8500/11707 queries (12965.1s)
+2026-09-04 12:50:49,799 | INFO    | run_experiment     | DTW tag: 9000/11707 queries (13723.0s)
+2026-09-04 13:03:13,333 | INFO    | run_experiment     | DTW tag: 9500/11707 queries (14466.5s)
+2026-09-04 13:15:47,049 | INFO    | run_experiment     | DTW tag: 10000/11707 queries (15220.2s)
+2026-09-04 13:28:34,167 | INFO    | run_experiment     | DTW tag: 10500/11707 queries (15987.3s)
+2026-09-04 13:41:18,724 | INFO    | run_experiment     | DTW tag: 11000/11707 queries (16751.9s)
+2026-09-04 13:54:24,380 | INFO    | run_experiment     | DTW tag: 11500/11707 queries (17537.5s)
+2026-09-04 13:59:41,272 | INFO    | run_experiment     | DTW tag retrieval done: 11707 queries in 17854.4s
+2026-09-04 13:59:41,925 | INFO    | models.representations | Built 46831 x 2583 matrix, density 0.00036
+2026-09-04 13:59:41,945 | INFO    | models.baselines   | Building baseline: frequency_prior
+2026-09-04 13:59:42,059 | INFO    | models.baselines   | Building baseline: cooccurrence
+2026-09-04 13:59:43,052 | INFO    | models.baselines   | Co-occurrence PPMI matrix: (2583, 2583)
+2026-09-04 13:59:46,600 | INFO    | run_experiment     | 
+model                       hits@1      hits@5     hits@10     hits@20         mrr
+----------------------------------------------------------------------------------
+knn_dtw_tag                 0.1723      0.3515      0.4426      0.5356      0.2594
+frequency_prior             0.0000      0.0000      0.0000      0.0000      0.0012
+cooccurrence                0.0000      0.0000      0.0000      0.0000      0.0000
+2026-09-04 16:17:54,486 | INFO    | models.hierarchical | Batch of 500: recomputed 1875 hub neighbourhoods (4.00% of reference)
+2026-09-04 20:01:43,368 | INFO    | models.hierarchical | Batch of 500: recomputed 3458 hub neighbourhoods (7.38% of reference)

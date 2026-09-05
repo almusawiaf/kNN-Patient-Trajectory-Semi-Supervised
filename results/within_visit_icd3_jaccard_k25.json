@@ -1,0 +1,368 @@
+{
+  "config": {
+    "paths": {
+      "mimic_dir": "/lustre/home/almusawiaf/PhD_Projects/MIMIC_resources",
+      "project_root": "/lustre/home/almusawiaf/PhD_Projects/Satyaki/Semi_Supervised",
+      "data_dir": "data",
+      "logs_dir": "logs",
+      "results_dir": "results"
+    },
+    "data": {
+      "icd_digits": 3,
+      "min_codes_per_admission": 2,
+      "min_code_frequency": 5,
+      "min_visits_per_patient": 2
+    },
+    "task": {
+      "name": "within_visit",
+      "test_fraction": 0.2,
+      "seed": 42
+    },
+    "model": {
+      "similarity": "jaccard",
+      "k": 25,
+      "vote_weighting": "similarity",
+      "epsilon": 1e-06,
+      "mahalanobis_components": 128
+    },
+    "hierarchical": {
+      "enabled": true,
+      "recompute_threshold": 2,
+      "batch_size": 500
+    },
+    "evaluation": {
+      "k_values": [
+        1,
+        5,
+        10,
+        20
+      ],
+      "stratify_by_frequency": true,
+      "baselines": [
+        "frequency_prior",
+        "cooccurrence"
+      ]
+    },
+    "runtime": {
+      "block_size": 512,
+      "max_reference": 20000,
+      "n_jobs": 8,
+      "log_level": "INFO"
+    }
+  },
+  "results": {
+    "knn_jaccard": {
+      "n_queries": 11707,
+      "hits@1": 0.194071922781242,
+      "hits@5": 0.38592295207995214,
+      "hits@10": 0.4790296403860938,
+      "hits@20": 0.5685487315281456,
+      "mrr": 0.2871422413350905,
+      "coverage": 0.9686512343042624,
+      "mean_candidates": 38.04006150166567,
+      "by_frequency_stratum": {
+        "Q1": {
+          "n": 59,
+          "hits@1": 0.0,
+          "hits@5": 0.05084745762711865,
+          "hits@10": 0.06779661016949153,
+          "hits@20": 0.0847457627118644,
+          "mrr": 0.01796015462384775
+        },
+        "Q2": {
+          "n": 228,
+          "hits@1": 0.017543859649122806,
+          "hits@5": 0.05263157894736842,
+          "hits@10": 0.07017543859649122,
+          "hits@20": 0.13157894736842105,
+          "mrr": 0.03810084255556119
+        },
+        "Q3": {
+          "n": 904,
+          "hits@1": 0.02654867256637168,
+          "hits@5": 0.0752212389380531,
+          "hits@10": 0.12721238938053098,
+          "hits@20": 0.17146017699115043,
+          "mrr": 0.055273477475716024
+        },
+        "Q4": {
+          "n": 10516,
+          "hits@1": 0.21338912133891214,
+          "hits@5": 0.4217383035374667,
+          "hits@10": 0.5204450361354127,
+          "hits@20": 0.6148725751236211,
+          "mrr": 0.3139844384220599
+        }
+      }
+    },
+    "frequency_prior": {
+      "n_queries": 11707,
+      "hits@1": 0.05629110788417186,
+      "hits@5": 0.1913385154181259,
+      "hits@10": 0.27607414367472455,
+      "hits@20": 0.4090714956863415,
+      "mrr": 0.1272890865115061,
+      "coverage": 1.0,
+      "mean_candidates": 50.0,
+      "by_frequency_stratum": {
+        "Q1": {
+          "n": 59,
+          "hits@1": 0.0,
+          "hits@5": 0.0,
+          "hits@10": 0.0,
+          "hits@20": 0.0,
+          "mrr": 0.0
+        },
+        "Q2": {
+          "n": 228,
+          "hits@1": 0.0,
+          "hits@5": 0.0,
+          "hits@10": 0.0,
+          "hits@20": 0.0,
+          "mrr": 0.0
+        },
+        "Q3": {
+          "n": 904,
+          "hits@1": 0.0,
+          "hits@5": 0.0,
+          "hits@10": 0.0,
+          "hits@20": 0.0,
+          "mrr": 0.0
+        },
+        "Q4": {
+          "n": 10516,
+          "hits@1": 0.06266641308482312,
+          "hits@5": 0.21300874857360214,
+          "hits@10": 0.3073411943704831,
+          "hits@20": 0.45540129326740203,
+          "mrr": 0.14170533813143799
+        }
+      }
+    },
+    "cooccurrence": {
+      "n_queries": 11707,
+      "hits@1": 0.0011104467412659093,
+      "hits@5": 0.026906978730673957,
+      "hits@10": 0.060476637908943365,
+      "hits@20": 0.08849406338088323,
+      "mrr": 0.016361035534773995,
+      "coverage": 1.0,
+      "mean_candidates": 50.0,
+      "by_frequency_stratum": {
+        "Q1": {
+          "n": 59,
+          "hits@1": 0.01694915254237288,
+          "hits@5": 0.1864406779661017,
+          "hits@10": 0.2033898305084746,
+          "hits@20": 0.2542372881355932,
+          "mrr": 0.07956145259422814
+        },
+        "Q2": {
+          "n": 228,
+          "hits@1": 0.0,
+          "hits@5": 0.03070175438596491,
+          "hits@10": 0.039473684210526314,
+          "hits@20": 0.04824561403508772,
+          "mrr": 0.012435410548169667
+        },
+        "Q3": {
+          "n": 904,
+          "hits@1": 0.0,
+          "hits@5": 0.02765486725663717,
+          "hits@10": 0.05088495575221239,
+          "hits@20": 0.07079646017699115,
+          "mrr": 0.012697911671672533
+        },
+        "Q4": {
+          "n": 10516,
+          "hits@1": 0.0011411182959300114,
+          "hits@5": 0.025865348041080257,
+          "hits@10": 0.06095473564092811,
+          "hits@20": 0.0899581589958159,
+          "mrr": 0.016406459827535667
+        }
+      }
+    }
+  },
+  "hierarchical": {
+    "backend": "sparse",
+    "n_batches": 24,
+    "n_ingested": 11707,
+    "total_recomputations": 35410,
+    "unique_rows_refreshed": 35410,
+    "reference_size": 46831,
+    "cumulative_vs_full_rebuild": 0.7561230808652388,
+    "beats_full_rebuild": true,
+    "mean_recomputations_per_batch": 1475.4166666666667,
+    "per_batch": [
+      {
+        "batch_size": 500,
+        "recomputed": 2026,
+        "cumulative_recomputations": 2026,
+        "full_recompute_would_be": 46831,
+        "cumulative_vs_full_rebuild": 0.043261941876107705
+      },
+      {
+        "batch_size": 500,
+        "recomputed": 3444,
+        "cumulative_recomputations": 5470,
+        "full_recompute_would_be": 46831,
+        "cumulative_vs_full_rebuild": 0.1168029723900835
+      },
+      {
+        "batch_size": 500,
+        "recomputed": 3384,
+        "cumulative_recomputations": 8854,
+        "full_recompute_would_be": 46831,
+        "cumulative_vs_full_rebuild": 0.1890628002818646
+      },
+      {
+        "batch_size": 500,
+        "recomputed": 3083,
+        "cumulative_recomputations": 11937,
+        "full_recompute_would_be": 46831,
+        "cumulative_vs_full_rebuild": 0.2548952616856356
+      },
+      {
+        "batch_size": 500,
+        "recomputed": 2746,
+        "cumulative_recomputations": 14683,
+        "full_recompute_would_be": 46831,
+        "cumulative_vs_full_rebuild": 0.3135316350280797
+      },
+      {
+        "batch_size": 500,
+        "recomputed": 2410,
+        "cumulative_recomputations": 17093,
+        "full_recompute_would_be": 46831,
+        "cumulative_vs_full_rebuild": 0.36499327368623347
+      },
+      {
+        "batch_size": 500,
+        "recomputed": 2126,
+        "cumulative_recomputations": 19219,
+        "full_recompute_would_be": 46831,
+        "cumulative_vs_full_rebuild": 0.410390553265999
+      },
+      {
+        "batch_size": 500,
+        "recomputed": 1881,
+        "cumulative_recomputations": 21100,
+        "full_recompute_would_be": 46831,
+        "cumulative_vs_full_rebuild": 0.4505562554718029
+      },
+      {
+        "batch_size": 500,
+        "recomputed": 1735,
+        "cumulative_recomputations": 22835,
+        "full_recompute_would_be": 46831,
+        "cumulative_vs_full_rebuild": 0.4876043646302663
+      },
+      {
+        "batch_size": 500,
+        "recomputed": 1540,
+        "cumulative_recomputations": 24375,
+        "full_recompute_would_be": 46831,
+        "cumulative_vs_full_rebuild": 0.5204885652665969
+      },
+      {
+        "batch_size": 500,
+        "recomputed": 1367,
+        "cumulative_recomputations": 25742,
+        "full_recompute_would_be": 46831,
+        "cumulative_vs_full_rebuild": 0.5496786316755995
+      },
+      {
+        "batch_size": 500,
+        "recomputed": 1282,
+        "cumulative_recomputations": 27024,
+        "full_recompute_would_be": 46831,
+        "cumulative_vs_full_rebuild": 0.5770536610364929
+      },
+      {
+        "batch_size": 500,
+        "recomputed": 1131,
+        "cumulative_recomputations": 28155,
+        "full_recompute_would_be": 46831,
+        "cumulative_vs_full_rebuild": 0.601204330464863
+      },
+      {
+        "batch_size": 500,
+        "recomputed": 997,
+        "cumulative_recomputations": 29152,
+        "full_recompute_would_be": 46831,
+        "cumulative_vs_full_rebuild": 0.6224936473703316
+      },
+      {
+        "batch_size": 500,
+        "recomputed": 980,
+        "cumulative_recomputations": 30132,
+        "full_recompute_would_be": 46831,
+        "cumulative_vs_full_rebuild": 0.6434199568661784
+      },
+      {
+        "batch_size": 500,
+        "recomputed": 829,
+        "cumulative_recomputations": 30961,
+        "full_recompute_would_be": 46831,
+        "cumulative_vs_full_rebuild": 0.6611219064295019
+      },
+      {
+        "batch_size": 500,
+        "recomputed": 737,
+        "cumulative_recomputations": 31698,
+        "full_recompute_would_be": 46831,
+        "cumulative_vs_full_rebuild": 0.6768593453054601
+      },
+      {
+        "batch_size": 500,
+        "recomputed": 675,
+        "cumulative_recomputations": 32373,
+        "full_recompute_would_be": 46831,
+        "cumulative_vs_full_rebuild": 0.6912728748051504
+      },
+      {
+        "batch_size": 500,
+        "recomputed": 654,
+        "cumulative_recomputations": 33027,
+        "full_recompute_would_be": 46831,
+        "cumulative_vs_full_rebuild": 0.7052379833870727
+      },
+      {
+        "batch_size": 500,
+        "recomputed": 611,
+        "cumulative_recomputations": 33638,
+        "full_recompute_would_be": 46831,
+        "cumulative_vs_full_rebuild": 0.718284896756422
+      },
+      {
+        "batch_size": 500,
+        "recomputed": 562,
+        "cumulative_recomputations": 34200,
+        "full_recompute_would_be": 46831,
+        "cumulative_vs_full_rebuild": 0.730285494650979
+      },
+      {
+        "batch_size": 500,
+        "recomputed": 494,
+        "cumulative_recomputations": 34694,
+        "full_recompute_would_be": 46831,
+        "cumulative_vs_full_rebuild": 0.7408340629070488
+      },
+      {
+        "batch_size": 500,
+        "recomputed": 503,
+        "cumulative_recomputations": 35197,
+        "full_recompute_would_be": 46831,
+        "cumulative_vs_full_rebuild": 0.7515748115564477
+      },
+      {
+        "batch_size": 207,
+        "recomputed": 213,
+        "cumulative_recomputations": 35410,
+        "full_recompute_would_be": 46831,
+        "cumulative_vs_full_rebuild": 0.7561230808652388
+      }
+    ]
+  }
+}

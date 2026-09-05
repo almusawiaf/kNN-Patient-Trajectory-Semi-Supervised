@@ -1,0 +1,13 @@
+2026-09-05 04:45:59,066 | INFO    | prepare_data       | Logging to /lustre/home/almusawiaf/PhD_Projects/Satyaki/Semi_Supervised/logs/prepare_data_20260905_044559.log
+2026-09-05 04:45:59,070 | INFO    | prepare_data       | Reading MIMIC-III from /lustre/home/almusawiaf/PhD_Projects/MIMIC_resources
+2026-09-05 04:46:01,139 | INFO    | prepare_data       | Raw: 58976 admissions, 46520 patients, 651000 diagnosis rows
+2026-09-05 04:46:02,098 | INFO    | prepare_data       | ICD-9 truncated to 3 digits: 1070 distinct codes
+2026-09-05 04:46:02,825 | INFO    | prepare_data       | Rare-code filter (>=5 admissions): 1070 -> 888 codes
+2026-09-05 04:46:04,956 | INFO    | prepare_data       | Admissions with >=2 distinct codes: 58538
+2026-09-05 04:46:17,618 | INFO    | prepare_data       | Patients: 46311 total, 7342 with >=2 visits (15.9%)
+2026-09-05 04:46:17,619 | INFO    | prepare_data       | Visit-count distribution (top 10): [(1, 38969), (2, 4990), (3, 1324), (4, 501), (5, 247), (6, 113), (7, 50), (8, 31), (9, 26), (10, 14)]
+2026-09-05 04:46:17,745 | INFO    | models.representations | Vocabulary: 888 codes retained
+2026-09-05 04:46:17,860 | INFO    | io                 | Wrote /lustre/home/almusawiaf/PhD_Projects/Satyaki/Semi_Supervised/data/admission_diagnoses.pkl
+2026-09-05 04:46:18,037 | INFO    | io                 | Wrote /lustre/home/almusawiaf/PhD_Projects/Satyaki/Semi_Supervised/data/patient_trajectories.pkl
+2026-09-05 04:46:18,053 | INFO    | io                 | Wrote /lustre/home/almusawiaf/PhD_Projects/Satyaki/Semi_Supervised/data/vocabulary.pkl
+2026-09-05 04:46:18,070 | INFO    | io                 | Wrote /lustre/home/almusawiaf/PhD_Projects/Satyaki/Semi_Supervised/results/data_summary_icd3.json
