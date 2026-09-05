@@ -31,6 +31,9 @@ from scipy import sparse
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from models.baselines import build_baselines
+from models.gpu_utils import gpu_info
+from models.gpu_similarity import GPUSimilarityIndex
+from models.gpu_dtw import dtw_tag_topk_fast
 from models.config import load_config
 from models.dtw import dtw_tag_topk, dtw_topk, impute_position
 from models.evaluation import (
@@ -55,8 +58,7 @@ log = logging.getLogger("run_experiment")
 # ============================================================================
 
 def run_knn_sparse(cfg, payload, vocab):
-    """Set/vector similarity on the sparse binary matrix (fast, vectorised)."""
-    from models.similarity import SimilarityIndex
+    """Set/vector similarity — uses GPU if available, CPU otherwise."""
 
     ref_seqs = payload["reference_sequences"]
     queries  = payload["queries"]
@@ -64,7 +66,7 @@ def run_knn_sparse(cfg, payload, vocab):
     ref_matrix   = build_matrix(ref_seqs, vocab)
     query_matrix = build_matrix([q["observed"] for q in queries], vocab)
 
-    index = SimilarityIndex(
+    index = GPUSimilarityIndex(
         ref_matrix,
         measure=cfg.model["similarity"],
         block_size=int(cfg.runtime["block_size"]),
@@ -105,42 +107,27 @@ def run_knn_dtw_tag(cfg, payload):
         log.warning("Capping DTW reference from %d to %d", len(ref_seqs), int(max_ref))
         ref_seqs = ref_seqs[:int(max_ref)]
 
-    k = int(cfg.model["k"])
-    window = cfg.model.get("dtw_window")   # optional Sakoe-Chiba band
+    k      = int(cfg.model["k"])
+    window = int(cfg.model.get("dtw_window") or 0)
+
+    # Fast batched DTW — GPU (CuPy) > Numba JIT > pure Python
+    gpu_info()
+    all_obs = [q["observed"] for q in queries]
+    idx_mat, w_mat = dtw_tag_topk_fast(
+        all_obs, ref_seqs, k=k, window=window,
+        block_size=int(cfg.runtime.get("block_size", 500)),
+    )
 
     predictions = []
-    t0 = time.time()
-    for n, q in enumerate(queries):
-        observed = q["observed"]  # list of codes with one removed
-        target   = q["target"]
-
-        # Find k nearest neighbours by tag-level DTW
-        idx, weights = dtw_tag_topk(observed, ref_seqs, k=k, window=window)
-
-        if len(idx) == 0:
-            predictions.append([])
-            continue
-
-        neighbour_seqs = [ref_seqs[i] for i in idx]
-
-        # Paper's imputation: weighted vote at the masked position.
-        # We don't know the exact position the mask was at in the original
-        # sequence, so we vote over the entire neighbour code pool, excluding
-        # codes already observed. This preserves the weighted formula while
-        # handling MIMIC's unordered billing sequences.
+    for row, q in enumerate(queries):
         ranked = rank_candidates(
-            observed_codes=set(observed),
-            neighbour_codes=neighbour_seqs,
-            similarities=weights,   # already 1/(d+eps) from dtw_tag_topk
+            observed_codes=set(q["observed"]),
+            neighbour_codes=[ref_seqs[i] for i in idx_mat[row]],
+            similarities=w_mat[row],
             scheme="similarity",
             exclude_observed=True,
         )
         predictions.append(ranked[:50])
-
-        if n and n % 500 == 0:
-            log.info("DTW tag: %d/%d queries (%.1fs)", n, len(queries), time.time() - t0)
-
-    log.info("DTW tag retrieval done: %d queries in %.1fs", len(queries), time.time() - t0)
     return predictions
 
 
@@ -219,6 +206,7 @@ def main() -> None:
     sim     = cfg.model["similarity"]
     payload = load_pickle(cfg.paths.data(f"task_{task}.pkl"))
     vocab   = CodeVocabulary.from_dict(load_pickle(cfg.paths.data("vocabulary.pkl")))
+    gpu_info()
     log.info("Task=%s | similarity=%s | queries=%d | vocab=%d",
              task, sim, len(payload["queries"]), len(vocab))
 
@@ -324,4 +312,3 @@ def run_baselines(cfg, payload, vocab):
 
 if __name__ == "__main__":
     main()
-    
